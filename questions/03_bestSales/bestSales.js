@@ -26,22 +26,38 @@ productWhichMadeMostMoney returns an object with an id for that product and a to
 
 //write the productWhichMadeMostMoney function
 
+
 function bestSales(sales) {
   let newObj = {}
-  let newArray = []
-   sales.forEach((element)=>{
-     
-       newArray.push(element.amount)
-   })
+  let finalObj = {}
 
-   let myMax = newArray.sort()
-   sales.forEach(element =>{
-    if(myMax[1] === element.amount){
-      newObj[element.productId] = element.amount
+  if(sales === undefined){
+    return {}
+  }
+ 
+   sales.forEach((element) =>{
+
+    if(!newObj[element.productId]){
+        
+       newObj[element.productId] = element.amount
+    }
+    else{
+        newObj[element.productId] += element.amount
+    }
+    let largest = Math.max(newObj[element.productId])
+    
+    if( largest === newObj[element.productId]){
+        finalObj ={
+            id: element.productId,
+            Total:largest
+        }
     }
    })
 
-   return newObj
+
+   return finalObj
+
+
 }
 
 module.exports = { bestSales, sales };
