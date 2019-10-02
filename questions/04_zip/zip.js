@@ -15,10 +15,10 @@ function zip(objs) {
    let mykey = key
 
    if(!newObj[mykey]){
-     newObj[key] = value
+     newObj[mykey] = value
    }
    else{
-     newObj[key] += value
+     newObj[mykey] += value
    }
  }
  return newObj
