@@ -45,14 +45,12 @@ const items = [
 //   }]
 
 function query(arr, obj) {
-  return arr.filter( object =>{
-    for(key in object){
-      let value = object[key]
 
-      if ( value === obj[key]){
-        return object
-      }
-    }
+  const filterme = Object.entries(obj)
+  return arr.filter( object =>{
+  return filterme.every(([key,value])=>{
+    return object[key] === value
+  })
    
   })
 }
