@@ -3,16 +3,16 @@
 
 const checkAnagrams = (str1, str2) => {
   //YOUR CODE
-  let arrayOne = str1.split('')
-  let arrayTwo = str2.split('')
 
-  let board = arrayOne.filter(element =>{
-    if(arrayTwo.includes(element)){
-      return true
-    }
-  })
-  if(board.length === 0){
+  if(str1.length !== str2.length){
     return false
+  }
+
+  let arrayOne = str1.split('').sort().join('')
+  let arrayTwo = str2.split('').sort().join('')
+
+  if(arrayOne === arrayTwo){
+    return true
   }
 };
 
