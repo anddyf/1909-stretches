@@ -28,6 +28,5 @@ zip([
    return newObj
   }
 
-}
 
 module.exports = { zip };
