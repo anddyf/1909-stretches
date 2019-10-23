@@ -6,15 +6,12 @@ const trim = obj => {
      if(element in obj){
 
       
-      if(obj[element] !== null || obj[element] !== undefined){
+      if(obj[element] !== null && obj[element] !== undefined){
         if(!objector[element]){
             objector[element] = obj[element]
         }
       }
-     }
-
-     
-        
+     }      
     })
    return objector
 }
