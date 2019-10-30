@@ -7,15 +7,20 @@
 //  456
 
 const floydsTriangle = n => {
-let sum = 0
-let str =''
+let sum = 1
+let arr = []
+
  for ( let i = 0; i < n; i++){
-    str += `${ n+= i} \n`
-    for ( let j = 0; j < n; j++){
-        str += `${n + j}`
+    const currentRow  = []
+    for ( let j = 0; j <= i; j++){
+        currentRow.push(sum)
+        sum += 1
     }
+    arr.push(currentRow.join(''))
  }
- return ''
+
+ return arr.join('')
+
 };
 
 
