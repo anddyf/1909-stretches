@@ -1,9 +1,16 @@
-function cache(Func) {
-    if(typeof Func !== 'function'){
-        throw "Input must be a function."
+function cache(func) {
+    if(typeof func !== 'function'){
+        throw new Error("Input must be a function.")
     }
-    return function(){
-    console.log(Func())
+    const memo = {}
+    return function(...num){
+        if (num in memo){
+            return memo[num]
+        }
+        else{
+            memo[num] = func(...num)
+            return memo[num]
+        }
     }
 }
 
